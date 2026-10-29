@@ -1,0 +1,111 @@
+{
+  "name": "@klnap/draft",
+  "version": "0.1.0",
+  "description": "Draft preview tokens and Payload/Next.js integration for secure content previews",
+  "license": "MIT",
+  "author": "klnap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klnap/draft"
+  },
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./consumers/next": {
+      "types": "./src/consumers/next/index.ts",
+      "default": "./src/consumers/next/index.ts"
+    },
+    "./consumers/next/draft-store": {
+      "types": "./src/consumers/next/draft-store.ts",
+      "default": "./src/consumers/next/draft-store.ts"
+    },
+    "./consumers/next/headers": {
+      "types": "./src/consumers/next/headers.ts",
+      "default": "./src/consumers/next/headers.ts"
+    },
+    "./consumers/next/get": {
+      "types": "./src/consumers/next/get.ts",
+      "default": "./src/consumers/next/get.ts"
+    },
+    "./consumers/next/draft-context": {
+      "types": "./src/consumers/next/draft-context.ts",
+      "default": "./src/consumers/next/draft-context.ts"
+    },
+    "./producers/payload": {
+      "types": "./src/producers/payload/index.ts",
+      "default": "./src/producers/payload/index.ts"
+    },
+    "./producers/payload/admin/PublishedPreviewButton": {
+      "default": "./src/producers/payload/admin/PublishedPreviewButton.tsx"
+    },
+    "./producers/payload/admin/ShareDraftPreviewButton": {
+      "default": "./src/producers/payload/admin/ShareDraftPreviewButton.tsx"
+    }
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "bun test tests",
+    "test:unit": "bun test tests/unit",
+    "test:contract": "bun test tests/contract",
+    "test:arch": "bun test tests/architecture",
+    "test:int": "bun test tests/integration",
+    "test:security": "bun test tests/security",
+    "check:exports": "bun run scripts/check-exports.ts",
+    "lint": "biome check .",
+    "build": "tsc -p tsconfig.build.json --noEmit",
+    "lint:fix": "biome check --write ."
+  },
+  "peerDependencies": {
+    "@payloadcms/ui": "3.90.2",
+    "next": ">=15.0.0",
+    "payload": ">=3.90.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@base-ui/react": "^1.8.0"
+  },
+  "peerDependenciesMeta": {
+    "@payloadcms/ui": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "@base-ui/react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@payloadcms/ui": "3.90.2",
+    "@types/bun": "^1.2.0",
+    "@biomejs/biome": "2.5.14",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.3",
+    "next": "16.4.3",
+    "payload": "3.90.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "typescript": "5.7.3",
+    "server-only": "^0.0.1",
+    "@base-ui/react": "^1.8.0"
+  },
+  "engines": {
+    "node": "^24.0.0",
+    "bun": ">=1.4.0"
+  },
+  "dependencies": {}
+}

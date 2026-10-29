@@ -1,0 +1,14 @@
+node_modules/
+dist/
+*.tgz
+.cache/
+.smoke-tmp/
+.smoke-tarball/
+.env
+.env.*
+.DS_Store
+*.tsbuildinfo
+.package.json.dev-backup
+scripts/css-sidefx-fixture/node_modules/
+scripts/css-sidefx-fixture/out/
+scripts/css-sidefx-fixture/package.tgz
